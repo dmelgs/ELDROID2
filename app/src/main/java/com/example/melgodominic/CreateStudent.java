@@ -10,7 +10,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
-
+import android.widget.Toast;
+import android.content.Context;
 
 public class CreateStudent extends AppCompatActivity {
     //global variables
@@ -60,6 +61,7 @@ public class CreateStudent extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context context = v.getRootView().getContext();
                 ObjectStudent objectStudent = new ObjectStudent();
                 objectStudent.firstname = fname.getText().toString();
                 objectStudent.lastname = lname.getText().toString();
@@ -71,7 +73,19 @@ public class CreateStudent extends AppCompatActivity {
                 else if(male.isChecked()){
                     objectStudent.gender = "Male";
                 }
+                boolean createSuccessful = new TableControllerStudent(context).create(objectStudent);
+                if(createSuccessful){
+                    Toast.makeText(context, "Student information was saved.", Toast.LENGTH_SHORT).show();
+                    fname.getText().clear();
+                    lname.getText().clear();
+                    address.getText().clear();
+                    male.setChecked(false);
+                    female.setChecked(false);
+                    spinner.setSelection(0);
 
+                }else{
+                    Toast.makeText(context, "Unable to save student information.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -90,7 +104,7 @@ public class CreateStudent extends AppCompatActivity {
     }
     public void spnr(){
         //creating a list of items for the spinner.
-        String[] items = new String[]{"BSIT", "BSED", "BSCE", "BSMA", "BSCRIM", "BSNURSING"};
+        String[] items = new String[]{"","BSIT", "BSED", "BSCE", "BSMA", "BSCRIM", "BSNURSING"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         //set the spinners adapter to the previously created one.
         spinner.setAdapter(adapter);

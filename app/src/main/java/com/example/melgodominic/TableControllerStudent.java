@@ -20,4 +20,11 @@ public class TableControllerStudent extends  DataBaseHandler{
         db.close();
         return createSuccessful;
     }
+    public int count() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "SELECT * FROM students";
+        int recordCount = db.rawQuery(sql, null).getCount();
+        db.close();
+        return recordCount;
+    }
 }
