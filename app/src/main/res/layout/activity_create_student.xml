@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateStudent">
+
+
+    <EditText
+        android:id="@+id/Lastname_EditText"
+        android:layout_width="158dp"
+        android:layout_height="45dp"
+        android:hint="@string/last_name"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/Address_EditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/Firstname_EditText"
+        app:layout_constraintTop_toBottomOf="@+id/CreateStud_textView"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck"></EditText>
+
+    <EditText
+        android:id="@+id/Firstname_EditText"
+        android:layout_width="158dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/first_name"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/Address_EditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateStud_textView"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
+        android:importantForAutofill="no"></EditText>
+
+    <EditText
+        android:id="@+id/Address_EditText"
+        android:layout_width="345dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="192dp"
+        android:hint="@string/current_address"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/gender_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:text="@string/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Address_EditText" />
+
+    <CheckBox
+        android:id="@+id/Male_CheckBox"
+        android:layout_width="85dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/male"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender_textView" />
+
+    <CheckBox
+        android:id="@+id/Female_CheckBox"
+        android:layout_width="94dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="152dp"
+        android:text="@string/female"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toEndOf="@+id/Male_CheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/gender_textView" />
+
+    <TextView
+        android:id="@+id/Course_TextView"
+        android:layout_width="109dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/course"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Male_CheckBox"></TextView>
+
+    <Spinner
+        android:id="@+id/Course_Spinner"
+        android:layout_width="179dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="148dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Course_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/Address_EditText"
+        tools:ignore="SpeakableTextPresentCheck"></Spinner>
+
+    <Button
+        android:id="@+id/Add_Button"
+        android:layout_width="132dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="72dp"
+
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Course_Spinner"
+        app:layout_constraintVertical_bias="0.0"></Button>
+
+    <TextView
+        android:id="@+id/CreateStud_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/create_student"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
