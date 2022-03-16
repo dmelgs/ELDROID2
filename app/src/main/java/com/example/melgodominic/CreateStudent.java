@@ -63,15 +63,15 @@ public class CreateStudent extends AppCompatActivity {
             public void onClick(View v) {
                 Context context = v.getRootView().getContext();
                 ObjectStudent objectStudent = new ObjectStudent();
-                objectStudent.firstname = fname.getText().toString();
-                objectStudent.lastname = lname.getText().toString();
-                objectStudent.address = address.getText().toString();
-                objectStudent.course = spinner.getSelectedItem().toString();
+                objectStudent.setFirstname(fname.getText().toString());
+                objectStudent.setLastname(lname.getText().toString());
+                objectStudent.setAddress(address.getText().toString());
+                objectStudent.setCourse(spinner.getSelectedItem().toString());
                 if(female.isChecked()){
-                    objectStudent.gender = "Female";
+                    objectStudent.setGender("Female");
                 }
                 else if(male.isChecked()){
-                    objectStudent.gender = "Male";
+                    objectStudent.setGender("Male");
                 }
                 boolean createSuccessful = new TableControllerStudent(context).create(objectStudent);
                 if(createSuccessful){
