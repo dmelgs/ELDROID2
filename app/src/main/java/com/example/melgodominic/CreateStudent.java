@@ -61,6 +61,16 @@ public class CreateStudent extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(fname.getText().toString().isEmpty() || lname.getText().toString().isEmpty() || address.getText().toString().isEmpty() ||
+                spinner.getSelectedItem().toString().isEmpty()){
+                    Toast.makeText(CreateStudent.this, "Some fields are missing.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(!male.isChecked() && !female.isChecked())
+                {
+                    Toast.makeText(CreateStudent.this, "Please select a gender.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Context context = v.getRootView().getContext();
                 ObjectStudent objectStudent = new ObjectStudent();
                 objectStudent.setFirstname(fname.getText().toString());
