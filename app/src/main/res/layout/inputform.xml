@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/editTextStudentFirstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:hint="Firstname"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:singleLine="true">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextStudentLastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextStudentFirstname"
+        android:layout_alignParentLeft="true"
+        android:hint="Lastname"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextStudentAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextStudentLastname"
+        android:layout_alignParentLeft="true"
+        android:hint="Address"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:singleLine="true"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/gender_textView2"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@+id/editTextStudentAddress"
+        android:layout_alignParentLeft="true"
+        android:text="Gender"
+        android:textSize="18sp"></TextView>
+
+    <EditText
+        android:id="@+id/editTextStudentCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender_textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="3dp"
+        android:hint="Course"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:singleLine="true"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+
+</RelativeLayout>
