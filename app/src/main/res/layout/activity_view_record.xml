@@ -6,24 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".ViewRecord">
 
+
     <TextView
         android:id="@+id/RecordCounter_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="96dp"
         android:text="0 Records Found"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/SearchStudent_EditText"
+        android:layout_width="112dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:hint="student id"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/search_Button"
+        android:layout_width="62dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="28dp"
+        android:text="GO"
+        app:layout_constraintEnd_toStartOf="@+id/view_Button"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toEndOf="@+id/SearchStudent_EditText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/view_Button"
+        android:layout_width="107dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="44dp"
+        android:width="50dp"
+        android:text="View All"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollViewRecords"
-        android:layout_width="331dp"
-        android:layout_height="582dp"
+        android:layout_width="339dp"
+        android:layout_height="533dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RecordCounter_textView"
         app:layout_constraintVertical_bias="0.0">

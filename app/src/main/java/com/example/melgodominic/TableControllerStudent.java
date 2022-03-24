@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,5 +106,19 @@ public class TableControllerStudent extends  DataBaseHandler{
         deleteSuccessful = db.delete("students", "id ='" + id + "'", null) > 0;
         db.close();
         return deleteSuccessful;
+    }
+    public boolean columnExists(int studentId) {
+        String sql = "SELECT EXISTS (SELECT * FROM students WHERE id='"+studentId+"' LIMIT 1)";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        // cursor.getInt(0) is 1 if column with value exists
+        if (cursor.getInt(0) == 1) {
+            cursor.close();
+            return true;
+        } else {
+            cursor.close();
+            return false;
+        }
     }
 }
